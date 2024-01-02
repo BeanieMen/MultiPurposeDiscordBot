@@ -48,3 +48,37 @@ const responseApod = Type.Object({
 });
 
 export type ResponseApod = Static<typeof responseApod>;
+
+const PlayerType = Type.Object({
+  name: Type.String(),
+  color: Type.String(), // Assuming color is a string, you can adjust the type accordingly
+  rating: Type.Integer(),
+});
+
+const GameType = Type.Object({
+  id: Type.String(),
+  perf: Type.Object({
+    key: Type.String(),
+    name: Type.String(),
+  }),
+  rated: Type.Boolean(),
+  players: Type.Array(PlayerType, { minItems: 2, maxItems: 2 }), // Specify the minimum and maximum number of items
+  pgn: Type.String(),
+  clock: Type.String(),
+});
+
+const PuzzleType = Type.Object({
+  id: Type.String(),
+  rating: Type.Integer(),
+  plays: Type.Integer(),
+  solution: Type.Array(Type.String()),
+  themes: Type.Array(Type.String()),
+  initialPly: Type.Integer(),
+});
+
+const ChessSchema = Type.Object({
+  game: GameType,
+  puzzle: PuzzleType,
+});
+
+export type Chess = Static<typeof ChessSchema>;

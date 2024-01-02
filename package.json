@@ -19,6 +19,8 @@
   },
   "dependencies": {
     "@sinclair/typebox": "^0.32.4",
+    "axios": "^1.6.3",
+    "canvas": "^2.11.2",
     "discord.js": "^14.14.1",
     "dotenv": "^16.3.1",
     "lowdb": "^7.0.1"

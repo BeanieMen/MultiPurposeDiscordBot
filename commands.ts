@@ -1,9 +1,21 @@
-import { DiscordCommand } from "../types/type";
+import { DiscordCommand } from "./src/types/type";
 
 export const commands: DiscordCommand = [
   {
     name: "ping",
     description: "Replies with Pong!",
+  },
+  {
+    name: "chess",
+    description: "Gives the daily puzzle given from lichess",
+    options: [
+      {
+        name: "guess",
+        description: "Guess the the answer in pgn notation",
+        type: 3,
+        required: false,
+      },
+    ],
   },
   {
     name: "apod",
