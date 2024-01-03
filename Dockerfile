@@ -2,6 +2,8 @@
 FROM node:20.10
 
 WORKDIR /
+
+# build pgn-extract from source
 RUN git clone https://github.com/MichaelB7/pgn-extract
 WORKDIR /pgn-extract/src
 RUN make
@@ -23,7 +25,4 @@ COPY . .
 
 # Expose any ports your bot may use (e.g., Discord uses 80 by default)
 EXPOSE 80
-
-# Command to run your application (replace with the actual file and command)
-CMD ["/bin/bash", ""]
 
